@@ -13,8 +13,10 @@ stdenv.mkDerivation rec {
 
   dontBuild = true;
   installPhase = ''
+    echo "Contents of the source directory:"
+    ls -R .
     mkdir -p $out/share/zsh/site-functions
-    cp {themes,plugins} $out/share/zsh
-    cp completions $out/share/zsh/site-functions
+    cp -r themes plugins $out/share/zsh
+    cp -r completions $out/share/zsh/site-functions
   '';
 }
