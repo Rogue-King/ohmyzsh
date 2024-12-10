@@ -8,7 +8,7 @@ stdenv.mkDerivation rec {
     owner = "Rogue-King";
     repo = "ohmyzsh";
     rev = "master";
-    sha256 = "sha256-mKluzEf5zHwkMCKcD6wnWqihsTYdxGdIpIDK6p1J9GI=";
+    sha256 = "";
   };
 
   dontBuild = true;
