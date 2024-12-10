@@ -1,14 +1,14 @@
 { stdenv, fetchFromGitHub }:
 
 stdenv.mkDerivation rec {
-  name = "exemplary-zsh-customization-${version}";
+  name = "oh-my-zsh-${version}";
   version = "1.0.0";
   src = fetchFromGitHub {
     # path to the upstream repository
     owner = "Rogue-King";
     repo = "ohmyzsh";
-    rev = "master";
-    sha256 = "";
+    rev = "v${version}";
+    sha256 = "sha256-pLHEn8N4pN8wmaThN9lqxHG62G+6X3hxWEmvQbl1Dbs=";
   };
 
   dontBuild = true;
