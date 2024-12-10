@@ -8,7 +8,7 @@ stdenv.mkDerivation rec {
     owner = "Rogue-King";
     repo = "ohmyzsh";
     rev = "master";
-    sha256 = "sha256-pLHEn8N4pN8wmaThN9lqxHG62G+6X3hxWEmvQbl1Dbs=";
+    sha256 = "sha256-mKluzEf5zHwkMCKcD6wnWqihsTYdxGdIpIDK6p1J9GI=";
   };
 
   dontBuild = true;
@@ -16,7 +16,8 @@ stdenv.mkDerivation rec {
     echo "Contents of the source directory:"
     ls -R .
     mkdir -p $out/share/zsh/site-functions
-    cp -r themes plugins $out/share/zsh
-    cp -r completions $out/share/zsh/site-functions
+    if [ -d themes ]; then cp -r themes $out/share/zsh; fi
+    if [ -d plugins ]; then cp -r plugins $out/share/zsh; fi
+    if [ -d completions ]; then cp -r completions $out/share/zsh/site-functions; fi
   '';
 }
